@@ -1,0 +1,189 @@
+.funnel-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px) brightness(50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.funnel-modal-content {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  height: 80vh;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  overflow: hidden;
+  direction: rtl;
+  text-align: right;
+  font-family: 'Noto Sans Hebrew', sans-serif;
+}
+
+.modal-header {
+  position: relative;
+  width: 100%;
+}
+
+.funnel-modal-inner {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-container {
+  width: 100%;
+  padding: 20px 20px 0;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.progress-bar {
+  background-color: #f0f0f0;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.progress {
+  background-color: #000;
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.back-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  padding: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #000;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 16px;
+}
+
+.funnel-modal-content input[type="text"],
+.funnel-modal-content input[type="tel"],
+.funnel-modal-content input[type="email"],
+.funnel-modal-content input[type="number"],
+.funnel-modal-content input[type="date"],
+.funnel-modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: right;
+  direction: rtl;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.funnel-modal-content input:focus,
+.funnel-modal-content textarea:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 1px #000;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: white;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+.continue-button,
+.home-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.continue-button:hover,
+.home-button:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.continue-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .funnel-modal-content {
+    width: 95%;
+    height: 90vh;
+  }
+
+  .funnel-modal-inner {
+    padding: 15px;
+  }
+
+  .continue-button,
+  .home-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

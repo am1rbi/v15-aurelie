@@ -1,0 +1,116 @@
+.due-date-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.due-date-step h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.due-date-options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.due-date-option {
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  padding: 1rem 1.5rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Noto Sans Hebrew', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.due-date-option:hover:not(.selected) {
+  border-color: #000;
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.due-date-option.selected {
+  background-color: #000;
+  color: white;
+  border-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.due-date-option-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.due-date-option:active {
+  transform: translateY(0);
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .due-date-option {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .due-date-step {
+    padding: 0.75rem;
+  }
+
+  .due-date-step h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .due-date-option {
+    min-height: 54px;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .due-date-option-text {
+    font-size: 1rem;
+  }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .due-date-option {
+    border: 2px solid ButtonText;
+  }
+
+  .due-date-option.selected {
+    border-color: Highlight;
+    background-color: Highlight;
+    color: HighlightText;
+  }
+}
+
+/* Error message styles */
+.error-message-centered {
+  text-align: center;
+  margin-top: 1rem;
+  color: #dc3545;
+  font-size: 0.875rem;
+  width: 100%;
+}
